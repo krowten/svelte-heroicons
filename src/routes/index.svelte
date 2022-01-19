@@ -29,7 +29,7 @@
 			</div>
 
 			<div class="flex space-x-10 ml-auto">
-				<a href="https://github.com/krowten/heroicons-svelte" class="group flex">
+				<a href="https://github.com/krowten/svelte-heroicons" class="group flex">
 					<div
 						class="w-full sm:w-auto inline-flex items-center justify-center text-purple-900 group-hover:text-purple-500 font-medium leading-none bg-white rounded-lg shadow-sm group-hover:shadow-lg py-3 px-5 border border-transparent transform-gpu group-hover:-translate-y-0.5 transition-all duration-150"
 					>
