@@ -11,14 +11,14 @@ _Note that this library currently only supports Svelte 3+ / SvelteKit._
 First, install `svelte-heroicons` from npm:
 
 ```sh
-npm install svelte-heroicons
+npm install --save @krowten/svelte-heroicons
 ```
 
 Сomponent can be used directly:
 
 ```svelte
 <script>
-	import Icon from 'svelte-heroicons/Icon.svelte';
+	import Icon from '@krowten/svelte-heroicons/Icon.svelte';
 </script>
 
 <div>
@@ -31,8 +31,8 @@ or each icon can be imported individually as a Svelte component:
 
 ```svelte
 <script>
-	import { BeakerIcon } from 'svelte-heroicons';
-	// or import BeakerIcon from 'svelte-heroicons/icons/BeakerIcon.svelte';
+	import { BeakerIcon } from '@krowten/svelte-heroicons';
+	// or import BeakerIcon from '@krowten/svelte-heroicons/icons/BeakerIcon.svelte';
 </script>
 
 <div>
