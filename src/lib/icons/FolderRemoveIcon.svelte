@@ -7,6 +7,14 @@
 	export let fill = solid ? 'currentColor' : 'none';
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" {viewBox} {stroke} {fill} {...$$props}>
-	{#if solid}<path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11h4"/>{:else}<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>{/if}
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	aria-hidden="true"
+	stroke-width="2"
+	{viewBox}
+	{stroke}
+	{fill}
+	{...$$props}
+>
+	{#if solid}<path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-5L9 4H4zm4 6a1 1 0 100 2h4a1 1 0 100-2H8z"/>{:else}<path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>{/if}
 </svg>

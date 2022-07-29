@@ -7,6 +7,14 @@
 	export let fill = solid ? 'currentColor' : 'none';
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" {viewBox} {stroke} {fill} {...$$props}>
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	aria-hidden="true"
+	stroke-width="2"
+	{viewBox}
+	{stroke}
+	{fill}
+	{...$$props}
+>
 	{@html iconSet[name][solid ? 'solid' : 'outline']}
 </svg>
