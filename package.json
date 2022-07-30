@@ -1,6 +1,6 @@
 {
 	"name": "@krowten/svelte-heroicons",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Heroicons for Svelte",
 	"repository": {
 		"type": "git",
