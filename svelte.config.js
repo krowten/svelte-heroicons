@@ -20,10 +20,7 @@ const config = {
 			base: '/svelte-heroicons'
 		},
 
-		appDir: 'internal',
-
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		appDir: 'internal'
 	}
 };
 
