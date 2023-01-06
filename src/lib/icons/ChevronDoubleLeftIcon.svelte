@@ -3,6 +3,7 @@
 	
 	export let solid: boolean = false;
 	export let viewBox: string = '0 0 24 24';
+    export let strokeWidth = '2';
 	export let stroke = !solid ? 'currentColor' : 'none';
 	export let fill = solid ? 'currentColor' : 'none';
 </script>
@@ -10,11 +11,11 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	aria-hidden="true"
-	stroke-width="2"
+	stroke-width={strokeWidth}
 	{viewBox}
 	{stroke}
 	{fill}
 	{...$$props}
 >
-	{#if solid}<path fill-rule="evenodd" d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/>{:else}<path stroke-linecap="round" stroke-linejoin="round" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"/>{/if}
+	{#if solid}<path fill-rule="evenodd" d="M13.28 3.97a.75.75 0 010 1.06L6.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0zm6 0a.75.75 0 010 1.06L12.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd"/>{:else}<path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"/>{/if}
 </svg>

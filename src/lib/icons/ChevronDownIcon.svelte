@@ -3,6 +3,7 @@
 	
 	export let solid: boolean = false;
 	export let viewBox: string = '0 0 24 24';
+    export let strokeWidth = '2';
 	export let stroke = !solid ? 'currentColor' : 'none';
 	export let fill = solid ? 'currentColor' : 'none';
 </script>
@@ -10,11 +11,11 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	aria-hidden="true"
-	stroke-width="2"
+	stroke-width={strokeWidth}
 	{viewBox}
 	{stroke}
 	{fill}
 	{...$$props}
 >
-	{#if solid}<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>{:else}<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>{/if}
+	{#if solid}<path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd"/>{:else}<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>{/if}
 </svg>

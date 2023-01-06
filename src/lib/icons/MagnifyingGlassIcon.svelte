@@ -1,0 +1,21 @@
+<script lang="ts">
+	
+	
+	export let solid: boolean = false;
+	export let viewBox: string = '0 0 24 24';
+    export let strokeWidth = '2';
+	export let stroke = !solid ? 'currentColor' : 'none';
+	export let fill = solid ? 'currentColor' : 'none';
+</script>
+
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	aria-hidden="true"
+	stroke-width={strokeWidth}
+	{viewBox}
+	{stroke}
+	{fill}
+	{...$$props}
+>
+	{#if solid}<path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd"/>{:else}<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>{/if}
+</svg>

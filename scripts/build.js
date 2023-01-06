@@ -5,20 +5,20 @@ import { readdir, readFile, writeFile } from 'fs/promises';
 
 const currentDir = resolve();
 
-const baseDir = join(currentDir, './node_modules/heroicons');
+const baseDir = join(currentDir, './node_modules/heroicons/24');
 const outDir = join(currentDir, './src/lib');
 const build = async () => {
 	const regexp = /(?:<svg[^>]*>)([\s\S]*)(?:<\/svg>)/gm;
 	const iconSet = {};
 	const indexFile = [];
 	const icons = await readdir(`${baseDir}/outline`);
-	const template = await readFile(`${outDir}/Icon.svelte`, 'UTF8');
+	const template = await readFile(`${outDir}/Icon.svelte`, 'utf-8');
 	for (let i = 0; i < icons.length; i++) {
 		const icon = icons[i];
 		const iconName = parse(icon).name;
 		try {
-			const outlineIcon = await readFile(`${baseDir}/outline/${icon}`, 'UTF8');
-			const solidIcon = await readFile(`${baseDir}/solid/${icon}`, 'UTF8');
+			const outlineIcon = await readFile(`${baseDir}/outline/${icon}`, 'utf-8');
+			const solidIcon = await readFile(`${baseDir}/solid/${icon}`, 'utf-8');
 
 			const outline = outlineIcon.replace(regexp, '$1').replace(/(\n\s+)/gm, '');
 			const solid = solidIcon.replace(regexp, '$1').replace(/(\n\s+)/gm, '');
@@ -33,7 +33,7 @@ const build = async () => {
 				.replace(/export let name.+/g, '')
 				.replace(/(?:\{@html)(.*)(?:\})/g, `{#if solid}${solid}{:else}${outline}{/if}`);
 
-			await writeFile(`${outDir}/icons/${capName}Icon.svelte`, svelteIcon, 'UTF8');
+			await writeFile(`${outDir}/icons/${capName}Icon.svelte`, svelteIcon, 'utf-8');
 
 			indexFile.push(`export { default as ${capName}Icon } from './icons/${capName}Icon.svelte';`);
 
@@ -45,8 +45,8 @@ const build = async () => {
 			console.log(error);
 		}
 	}
-	await writeFile(`${outDir}/icon-set.ts`, `export default ${JSON.stringify(iconSet)}`, 'UTF8');
-	await writeFile(`${outDir}/index.ts`, `${indexFile.join('\n')}`, 'UTF8');
+	await writeFile(`${outDir}/icon-set.ts`, `export default ${JSON.stringify(iconSet)}`, 'utf-8');
+	await writeFile(`${outDir}/index.ts`, `${indexFile.join('\n')}`, 'utf-8');
 };
 
 build();
