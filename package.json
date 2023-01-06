@@ -23,7 +23,7 @@
 		"dev": "vite dev",
 		"build": "svelte-kit sync && svelte-package",
 		"publish": "npm publish ./package",
-		"deploy": "npm run build && gh-pages -d build -t true",
+		"deploy": "npm run build && vite build && gh-pages -d build -t true",
 		"prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
 		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -36,6 +36,7 @@
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^1.0.0",
+		"@sveltejs/adapter-static": "^1.0.0",
 		"@sveltejs/kit": "^1.0.0",
 		"@sveltejs/package": "^1.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
