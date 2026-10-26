@@ -1,21 +1,9 @@
 <script lang="ts">
-	
-	
-	export let solid: boolean = false;
-	export let viewBox: string = '0 0 24 24';
-    export let strokeWidth = '2';
-	export let stroke = !solid ? 'currentColor' : 'none';
-	export let fill = solid ? 'currentColor' : 'none';
+	import type { IconProps } from '../types.js';
+
+	import IconBase from '../IconBase.svelte';
+
+	const props: IconProps = $props();
 </script>
 
-<svg
-	xmlns="http://www.w3.org/2000/svg"
-	aria-hidden="true"
-	stroke-width={strokeWidth}
-	{viewBox}
-	{stroke}
-	{fill}
-	{...$$props}
->
-	{#if solid}<path fill-rule="evenodd" d="M4.72 3.97a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 010-1.06zm6 0a.75.75 0 011.06 0l7.5 7.5a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 11-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 010-1.06z" clip-rule="evenodd"/>{:else}<path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"/>{/if}
-</svg>
+<IconBase {...props} paths={{ outline: "<path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5\"/>", solid: "<path fill-rule=\"evenodd\" d=\"M13.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L11.69 12 4.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z\" clip-rule=\"evenodd\"/><path fill-rule=\"evenodd\" d=\"M19.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06L17.69 12l-6.97-6.97a.75.75 0 0 1 1.06-1.06l7.5 7.5Z\" clip-rule=\"evenodd\"/>" }} />

@@ -1,0 +1,15 @@
+{
+	"$schema": "https://context7.com/schema/context7.json",
+	"projectTitle": "@krowten/svelte-heroicons",
+	"description": "Heroicons v2 as typed, tree-shakeable Svelte 5 components: every 24px icon in the outline and solid styles, as named imports like BeakerIcon or through a generic Icon component with a typed name prop.",
+	"excludeFiles": ["CHANGELOG.md", "LICENSE.md"],
+	"rules": [
+		"Install @krowten/svelte-heroicons and import icons by name: import { BeakerIcon } from '@krowten/svelte-heroicons'. There is no @heroicons/svelte package.",
+		"Component names are heroicons v2 names in PascalCase plus Icon (arrow-up-tray → ArrowUpTrayIcon). Heroicons v1 names such as LogoutIcon or SearchIcon do not exist; look up the v2 name on heroicons.com.",
+		"Pass solid for the filled style: <BeakerIcon solid />. Only the 24px outline and solid styles are included, not the 20px mini or 16px micro ones.",
+		"Icons render at 24x24 by default; size them with CSS, e.g. class=\"size-5\", and color them with text color, since they use currentColor.",
+		"Use <Icon name=\"beaker\" /> only when the icon name is known at runtime: it bundles every icon, while named imports are tree-shaken.",
+		"Icons are aria-hidden by default; give an icon that carries meaning an aria-label and it is exposed as role=\"img\".",
+		"Requires Svelte 5."
+	]
+}

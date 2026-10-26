@@ -1,21 +1,11 @@
 <script lang="ts">
-	import iconSet from './icon-set';
-	export let name: string;
-	export let solid: boolean = false;
-	export let viewBox: string = '0 0 24 24';
-    export let strokeWidth = '2';
-	export let stroke = !solid ? 'currentColor' : 'none';
-	export let fill = solid ? 'currentColor' : 'none';
+	import type { IconName } from './icon-set.js';
+	import type { IconProps } from './types.js';
+
+	import IconBase from './IconBase.svelte';
+	import iconSet from './icon-set.js';
+
+	const { name, ...rest }: IconProps & { name: IconName } = $props();
 </script>
 
-<svg
-	xmlns="http://www.w3.org/2000/svg"
-	aria-hidden="true"
-	stroke-width={strokeWidth}
-	{viewBox}
-	{stroke}
-	{fill}
-	{...$$props}
->
-	{@html iconSet[name][solid ? 'solid' : 'outline']}
-</svg>
+<IconBase {...rest} paths={iconSet[name]} />
