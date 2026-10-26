@@ -37,3 +37,7 @@ jobs:
       - run: bun run test:e2e
       # staged, not published: the release goes live only after the maintainer approves it
       - run: npm stage publish --provenance --access public
+      # npm reports a failed OIDC token exchange only in its debug log, as "need auth" or E401
+      - name: Show npm auth details
+        if: failure()
+        run: grep -hiE 'oidc|trusted|auth' /github/home/.npm/_logs/*-debug-0.log || true
