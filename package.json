@@ -1,12 +1,12 @@
 {
 	"name": "@krowten/svelte-heroicons",
 	"version": "0.2.0",
-	"description": "Heroicons as Svelte 5 components",
+	"description": "Heroicons for Svelte 5: all 324 outline and solid icons through one typed <Icon name> component or as tree-shakeable components",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/krowten/svelte-heroicons.git"
 	},
-	"homepage": "https://krowten.github.io/svelte-heroicons",
+	"homepage": "https://krowten.github.io/svelte-heroicons/",
 	"author": {
 		"name": "krowten",
 		"email": "me@krowten.dev",
@@ -15,11 +15,22 @@
 	"license": "MIT",
 	"keywords": [
 		"svelte",
+		"svelte5",
 		"sveltekit",
-		"tailwindcss",
-		"icon",
+		"heroicons",
+		"svelte-heroicons",
+		"heroicons-svelte",
 		"icons",
-		"heroicons"
+		"icon",
+		"svelte-icons",
+		"svg-icons",
+		"svg",
+		"svelte-components",
+		"icon-components",
+		"tailwindcss",
+		"tailwind",
+		"typescript",
+		"runes"
 	],
 	"scripts": {
 		"dev": "vite dev",
@@ -29,6 +40,7 @@
 		"package": "svelte-kit sync && svelte-package && publint",
 		"prepack": "bun run package",
 		"generate": "bun scripts/generate.ts",
+		"images": "bun scripts/images.ts",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
@@ -78,6 +90,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@fontsource-variable/jetbrains-mono": "^5.3.0",
 		"@playwright/test": "^1.64.1",
 		"@sveltejs/adapter-static": "^4.0.0",
 		"@sveltejs/kit": "^3.1.0",

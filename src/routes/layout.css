@@ -1,1 +1,27 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/jetbrains-mono';
+
+@theme {
+	/* code is what visitors copy here, so it gets a real face instead of whatever mono the OS has */
+	--font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+}
+
+@layer base {
+	html {
+		@apply bg-white text-slate-900 antialiased;
+		caret-color: var(--color-violet-600);
+		scrollbar-color: var(--color-slate-300) transparent;
+	}
+
+	::selection {
+		@apply bg-violet-200 text-violet-950;
+	}
+
+	:focus-visible {
+		@apply outline-2 outline-offset-2 outline-violet-600;
+	}
+
+	input[type='search']::-webkit-search-cancel-button {
+		appearance: none;
+	}
+}
