@@ -6,7 +6,8 @@
 	"rules": [
 		"Install @krowten/svelte-heroicons. The main API is one component: import { Icon } from '@krowten/svelte-heroicons', then <Icon name=\"beaker\" />. There is no @heroicons/svelte package.",
 		"name takes heroicons v2 names such as arrow-up-tray or magnifying-glass, typed as IconName. Heroicons v1 names such as logout or search do not exist; look up the v2 name on heroicons.com.",
-		"Icon includes every icon (about 65 KB gzipped). When bundle size matters, import single icons as components: import { BeakerIcon } from '@krowten/svelte-heroicons'. The component name is the v2 name in PascalCase plus Icon (arrow-up-tray → ArrowUpTrayIcon).",
+		"Icon includes every icon (about 65 KB gzipped). When bundle size matters, import single icons as components: import { BeakerIcon } from '@krowten/svelte-heroicons'.",
+		"A component name is the v2 name in PascalCase plus Icon: arrow-up-tray → ArrowUpTrayIcon.",
 		"Pass solid for the filled style: <Icon name=\"beaker\" solid />. Only the 24px outline and solid styles are included, not the 20px mini or 16px micro ones.",
 		"Icons render at 24x24 by default; size them with CSS, e.g. class=\"size-5\", and color them with text color, since they use currentColor.",
 		"Icons are aria-hidden by default; give an icon that carries meaning an aria-label and it is exposed as role=\"img\".",
